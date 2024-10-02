@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import InfoSection from "../components/InfoSection";
 import { db } from "@/service/firebaseConfig";
 import { toast } from "sonner";
+import Hotels from "../components/Hotels";
+import PlacesToVisit from "../components/PlacesToVisit";
+import Footer from "../components/Footer";
 
 function Viewtrip(){
 
@@ -31,15 +34,21 @@ function Viewtrip(){
             toast('No trip Found')
         }
     }  
-
-
+   console.log(trip)
   return(
+
+
     <div className="p-10 md:px-20 lg:px-44 xl:px-56">
+        
+
     {/*Information Section*/}
     <InfoSection trip={trip}/>
     {/*Recommended Hotels*/}
+    <Hotels trip={trip}/>
     {/*Daily Plan*/}
+    <PlacesToVisit trip={trip}/>
     {/*footer*/}
+    <Footer trip={trip}/>
     </div>
   )
 
