@@ -12,7 +12,7 @@ function Hero() {
           <p className='text-xl text-gray-500 text-center'> Your personal trip planner and travel curator, creating custom itineraries tailored to your interest and budget. </p>
           <img src="/limg.png" className='object-contain md:object-scale-down object-cover h-400 w-750 '/>
           <Link to={'/create-trip'}>
-            <Button>Get Started, It's Free</Button>
+            <Button className="mb-[5px]">Get Started, It's Free</Button>
           </Link>
     </div>
    

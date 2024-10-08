@@ -52,7 +52,7 @@ function Header() {
   };
   
   return(
-    <div className='bg-white-bold p-3 shadow-sm flex justify-between items-center px-5 '> 
+    <div className='bg-white-bold p-3 shadow-sm flex justify-between items-center px-5 main-header '> 
         <img src='/logo.png' className='h-[50px] w-[150px]'/>
         <div>
            {user ?
