@@ -2,8 +2,8 @@
 
 A web-based travel planner that helps users organize trips, create itineraries, and form social travel groups using Firebase.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/your-username/smart-travel-planner)
-![GitHub stars](https://img.shields.io/github/stars/your-username/smart-travel-planner?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/tejaszinjade/smart-travel-planner)
+![GitHub stars](https://img.shields.io/github/stars/tejaszinjade/smart-travel-planner?style=social)
 
 ## Features ✨
 - 🗺️ Plan and customize your travel itinerary
@@ -39,7 +39,7 @@ Follow these steps to set up the project locally:
 - **Node.js** - Backend
 
 ## Screenshots 🖼️
-![Home Page](https://github.com/your-username/smart-travel-planner/blob/main/screenshots/home.png)
+![Home Page](https://github.com/tejaszinjade/smart-travel-planner/blob/main/screenshots/home.png)
 
 ## API Endpoints 📡
 | Method | Endpoint | Description |
@@ -61,9 +61,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact 📧
 For any questions or support, reach out via:
-- Email: your.email@example.com
-- GitHub Issues: [Create an Issue](https://github.com/your-username/smart-travel-planner/issues)
+- Email: tejaszinjade2005@gmail.com
+- GitHub Issues: [No issue till Now](https://github.com/your-username/smart-travel-planner/issues)
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Tejas Zinjade
