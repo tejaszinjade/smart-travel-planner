@@ -17,7 +17,7 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/smart-travel-planner.git
+   git clone https://github.com/tejaszinjade/smart-travel-planner.git
    ```
 2. **Navigate to the project folder:**
    ```bash
@@ -61,9 +61,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact 📧
 For any questions or support, reach out via:
-- Email: tejaszinjade2005@gmail.com
-- GitHub Issues: [No issue till Now](https://github.com/your-username/smart-travel-planner/issues)
+- Email: your.email@example.com
+- GitHub Issues: [Create an Issue](https://github.com/tejaszinjade/smart-travel-planner/issues)
 
 ---
 
-Made with ❤️ by Tejas Zinjade
+Made with ❤️ by [Tejas Zinjade]
