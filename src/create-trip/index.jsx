@@ -115,19 +115,22 @@ function CreateTrip() {
   };
 
   return (
-    <div className="sm:px-10 md:px-32 lg:px-10 px-56 xl:px-5 mt-10 align-middle">
-      <h2 className="font-bold text-3xl">
-      Share your adventure wishlist 🗺️✈️
+    <div className="sm:px-10 md:px-32 lg:px-10 px-56 xl:px-5 mt-28 align-middle"> 
+      {/* Increased margin-top (mt-28) to avoid overlap */}
+      <h2 className="font-bold text-3xl text-gray-900 text-center">
+        Share your adventure wishlist 🗺️✈️
       </h2>
-      <p className="mt-3 text-gray-500 text-xl">
+      <p className="mt-3 text-gray-600 text-xl text-center">
         Just provide some basic information, and our trip planner will generate
         a customized itinerary based on your preferences.
       </p>
-
-      <div className="mt-20 flex flex-col gap-10">
+  
+      {/* Form Container */}
+      <div className="mt-16 flex flex-col gap-10"> 
+        {/* Increased margin-top (mt-16) for better spacing */}
         <div>
           <h2 className="text-xl my-3 font-medium">
-          🌍 What's your dream destination?
+            🌍 What's your dream destination?
           </h2>
           <GooglePlacesAutocomplete
             apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
@@ -140,10 +143,10 @@ function CreateTrip() {
             }}
           />
         </div>
-
+  
         <div>
           <h2 className="text-xl my-3 font-medium">
-          🌍 How long will your adventure last?
+            🌍 How long will your adventure last?
           </h2>
           <Input
             placeholder={"Ex. 2"}
@@ -152,7 +155,7 @@ function CreateTrip() {
           />
         </div>
       </div>
-
+  
       <div>
         <h2 className="text-xl my-3 font-medium">💰 How Much Are You Looking to Spend?</h2>
         <div className="grid grid-cols-3 gap-5 mt-5">
@@ -161,8 +164,8 @@ function CreateTrip() {
               key={index}
               onClick={() => handleInputChange("budget", item.title)}
               className={`p-4 border cursor-pointer rounded-lg 
-              hover:shadow-lg
-              ${formData?.budget === item.title && "shadow-lg border-black"}`}
+              hover:shadow-lg transition-all duration-300
+              ${formData?.budget === item.title ? "shadow-lg border-black bg-gray-100" : "bg-white"}`}
             >
               <h2 className="text-4xl">{item.icon}</h2>
               <h2 className="font-bold text-lg">{item.title}</h2>
@@ -171,10 +174,10 @@ function CreateTrip() {
           ))}
         </div>
       </div>
-
+  
       <div>
         <h2 className="text-xl my-3 font-medium">
-        Who's your travel buddy for the next big adventure? 🌍✈️
+          Who's your travel buddy for the next big adventure? 🌍✈️
         </h2>
         <div className="grid grid-cols-3 gap-5 mt-5">
           {SelectTravelList.map((item, index) => (
@@ -182,10 +185,8 @@ function CreateTrip() {
               key={index}
               onClick={() => handleInputChange("traveler", item.people)}
               className={`p-4 border cursor-pointer rounded-lg 
-              hover:shadow-lg 
-              ${
-                formData?.traveler === item.people && "shadow-lg border-black"
-              }`}
+              hover:shadow-lg transition-all duration-300
+              ${formData?.traveler === item.people ? "shadow-lg border-black bg-gray-100" : "bg-white"}`}
             >
               <h2 className="text-4xl">{item.icon}</h2>
               <h2 className="font-bold text-lg">{item.title}</h2>
@@ -194,9 +195,9 @@ function CreateTrip() {
           ))}
         </div>
       </div>
-
-      <div className="my-10 justify-end flex">
-        <Button disabled={loading} onClick={OnGenerateTrip}>
+  
+      <div className="my-10 justify-center flex">
+        <Button disabled={loading} onClick={OnGenerateTrip} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105">
           {loading ? (
             <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
           ) : (
@@ -204,28 +205,7 @@ function CreateTrip() {
           )}
         </Button>
       </div>
-
-      <Dialog open={openDialog}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogDescription>
-              <img src="/logo.png" className="w-[400px] h-[100px]" alt="Logo" />
-              <h2 className="font-bold text-lg mt-7">Sign In with Google</h2>
-              <p>Sign in to the App with Google authentication Securely</p>
-
-              <Button
-                onClick={login}
-                className="w-full mt-5 flex gap-4 items-center"
-              >
-                <FcGoogle className="h-7 w-7" />
-                Sign In with Google
-              </Button>
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
-
 export default CreateTrip;
