@@ -65,12 +65,12 @@ function Header() {
         {user ? (
           <>
             <a href='/create-trip'>
-              <Button className="bg-sky-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-blue-700">
+              <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
                 + Create Trip
               </Button>
             </a>
             <a href='/my-trips'>
-              <Button className="bg-sky-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-blue-700">
+              <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
                 My Trips
               </Button>
             </a>

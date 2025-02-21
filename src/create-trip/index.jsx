@@ -216,7 +216,7 @@ function CreateTrip() {
             <Button
               disabled={loading}
               onClick={OnGenerateTrip}
-              className="bg-orange-500 text-white font-bold text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105"
+              className="bg-orange-500 text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105"
             >
               {loading ? (
                 <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
