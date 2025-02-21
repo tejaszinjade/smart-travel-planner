@@ -129,7 +129,7 @@ function CreateTrip() {
       </div>
 
       {/* Form Container */}
-      <div className="relative z-10 sm:px-10 md:px-32 lg:px-10 px-56 xl:px-5 mt-28 align-middle bg-white bg-opacity-90 p-8 rounded-xl shadow-lg w-full max-w-3xl">
+      <div className="relative z-10 sm:px-10 md:px-32 lg:px-10 px-56 xl:px-5 mt-28 align-middle bg-white bg-opacity-50 p-8 rounded-xl shadow-lg w-full max-w-3xl">
         <h2 className="font-bold text-3xl text-gray-900 text-center">
           Share your adventure wishlist 🗺️✈️
         </h2>
@@ -137,9 +137,8 @@ function CreateTrip() {
           Just provide some basic information, and our trip planner will
           generate a customized itinerary based on your preferences.
         </p>
-
         {/* Form */}
-        <div className="mt-16 flex flex-col gap-10">
+        <div className="mt-16 flex flex-col gap-5 opacity ">
           <div>
             <h2 className="text-xl my-3 font-medium">
               🌍 What's your dream destination?
@@ -217,7 +216,7 @@ function CreateTrip() {
             <Button
               disabled={loading}
               onClick={OnGenerateTrip}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105"
+              className="bg-orange-500 text-white font-bold text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105"
             >
               {loading ? (
                 <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
