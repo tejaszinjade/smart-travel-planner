@@ -45,6 +45,7 @@ function Header() {
         setOpenDialog(false);
       });
   };
+  
 
   const handleLogout = () => {
     googleLogout();
