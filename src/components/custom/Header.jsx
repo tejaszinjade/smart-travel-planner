@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
@@ -64,9 +65,14 @@ function Header() {
       <div className="flex items-center gap-4">
         {user ? (
           <>
-            <a href='/create-trip'>
+            <a href='/make-trip'>
               <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
                 + Create Trip
+              </Button>
+            </a>
+            <a href='/create-trip'>
+              <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
+                + Generate Trip
               </Button>
             </a>
             <a href='/my-trips'>
