@@ -64,17 +64,22 @@ function Header() {
       <div className="flex items-center gap-4">
         {user ? (
           <>
+             <a href='/my-trips'>
+              <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
+                 + Add Itirnary
+              </Button>
+            </a>           
             <a href='/create-trip'>
-              <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
-                + Create Trip
+              <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
+                ⚡Generate Trip
               </Button>
             </a>
             <a href='/my-trips'>
-              <Button className="bg-orange-500 text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-black">
+              <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
                 My Trips
               </Button>
             </a>
-
+            
             <Popover>
               <PopoverTrigger>
                 <img src={user?.picture} className='h-[40px] w-[40px] rounded-full border-2 border-white cursor-pointer' alt="User Profile" />
