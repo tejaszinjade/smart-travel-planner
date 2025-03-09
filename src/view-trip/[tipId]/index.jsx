@@ -37,10 +37,12 @@ function Viewtrip(){
    console.log(trip)
   return(
 
-
+   
+    
     <div className="p-10 md:px-20 lg:px-44 xl:px-56">
-        
-
+        <br/>
+        <br/>
+        <br/>
     {/*Information Section*/}
     <InfoSection trip={trip}/>
     {/*Recommended Hotels*/}
