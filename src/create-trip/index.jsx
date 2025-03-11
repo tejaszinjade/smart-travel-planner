@@ -26,7 +26,12 @@ import { useNavigate } from "react-router-dom";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    location: "",
+    noOfDays: "",
+    budget: "",
+    traveler: "",
+  });
   const [openDialog, setOpenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -50,47 +55,57 @@ function CreateTrip() {
   const OnGenerateTrip = async () => {
     const user = localStorage.getItem("user");
 
+    // Check for user login
     if (!user) {
       setOpenDialog(true);
       return;
     }
 
-    if (
-      formData?.noOfDays > 5 &&
-      (!formData?.location || !formData?.budget || !formData?.traveler)
-    ) {
-      toast("Please fill all the details.");
+    // Validation for required fields
+    if (!formData.location || !formData.noOfDays || !formData.budget || !formData.traveler) {
+      toast.error("Please fill all the required fields.");
       return;
     }
 
     setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace(
       "{location}",
-      formData?.location?.label
+      formData?.location?.label || "unknown destination"
     )
       .replace("{totalDays}", formData?.noOfDays)
       .replace("{traveler}", formData?.traveler)
-      .replace("{budget}", formData?.budget)
-      .replace("{totalDays", formData?.noOfDays);
+      .replace("{budget}", formData?.budget);
 
-    const result = await chatSession.sendMessage(FINAL_PROMPT);
-    console.log("--", result?.response?.text());
-    setLoading(false);
-    SaveAiTrip(result?.response?.text());
+    try {
+      const result = await chatSession.sendMessage(FINAL_PROMPT);
+      console.log("--", result?.response?.text());
+      SaveAiTrip(result?.response?.text());
+    } catch (error) {
+      console.error("Error generating trip:", error);
+      toast.error("Something went wrong while generating the trip.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const SaveAiTrip = async (TripData) => {
     setLoading(true);
-    const user = JSON.parse(localStorage.getItem("user"));
-    const docId = Date.now().toString();
-    await setDoc(doc(db, "AITrips", docId), {
-      userSelection: formData,
-      tripData: JSON.parse(TripData),
-      userEmail: user?.email,
-      id: docId,
-    });
-    setLoading(false);
-    navigate("/view-trip/" + docId);
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      const docId = Date.now().toString();
+      await setDoc(doc(db, "AITrips", docId), {
+        userSelection: formData,
+        tripData: JSON.parse(TripData),
+        userEmail: user?.email,
+        id: docId,
+      });
+      navigate("/view-trip/" + docId);
+    } catch (error) {
+      console.error("Error saving trip:", error);
+      toast.error("Failed to save the trip.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const GetUserProfile = (tokenInfo) => {
@@ -105,7 +120,6 @@ function CreateTrip() {
         }
       )
       .then((resp) => {
-        console.log(resp);
         localStorage.setItem("user", JSON.stringify(resp.data));
         setOpenDialog(false);
         OnGenerateTrip();
@@ -127,9 +141,13 @@ function CreateTrip() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
-
+      
       {/* Form Container */}
-      <div className="relative z-10 sm:px-10 md:px-32 lg:px-10 px-56 xl:px-5 mt-28 align-middle bg-white bg-opacity-50 p-8 rounded-xl shadow-lg w-full max-w-3xl">
+      <div className="relative z-10 bg-white bg-opacity-50 p-8 rounded-xl shadow-lg w-full max-w-3xl">
+        <br/>
+        <br/>
+        <br/>
+       
         <h2 className="font-bold text-3xl text-gray-900 text-center">
           Share your adventure wishlist 🗺️✈️
         </h2>
@@ -138,7 +156,7 @@ function CreateTrip() {
           generate a customized itinerary based on your preferences.
         </p>
         {/* Form */}
-        <div className="mt-16 flex flex-col gap-5 opacity ">
+        <div className="mt-16 flex flex-col gap-5">
           <div>
             <h2 className="text-xl my-3 font-medium">
               🌍 What's your dream destination?
@@ -168,7 +186,7 @@ function CreateTrip() {
 
           <div>
             <h2 className="text-xl my-3 font-medium">
-              💰 How Much Are You Looking to Spend?
+              💰 How much are you looking to spend?
             </h2>
             <div className="grid grid-cols-3 gap-5 mt-5">
               {SelectBudgetOptions.map((item, index) => (
