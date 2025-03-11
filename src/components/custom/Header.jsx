@@ -64,7 +64,7 @@ function Header() {
       <div className="flex items-center gap-4">
         {user ? (
           <>
-             <a href='/my-trips'>
+             <a href='/add-itinerary'>
               <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
                  + Add Itirnary
               </Button>
