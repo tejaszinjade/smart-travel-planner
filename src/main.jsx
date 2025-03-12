@@ -35,9 +35,10 @@ const router = createBrowserRouter(
       element:<AddItinerary/>
     },
     {
-      path:'/view-created-itinerary',
+      path:'/view-created-itinerary/:id',
       element:<ViewCreatedItinerary/>
     }
+    
   ]
 )
 
