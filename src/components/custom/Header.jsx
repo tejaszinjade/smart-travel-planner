@@ -66,12 +66,18 @@ function Header() {
           <>
              <a href='/add-itinerary'>
               <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
-                 + Add Itirnary
+                 + Add Itinerary
               </Button>
-            </a>           
+            </a>    
+                   
             <a href='/create-trip'>
               <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
                 ⚡Generate Trip
+              </Button>
+            </a>
+            <a href='/view-created-itinerary'>
+              <Button className="bg-[#0078FF] text-white font-bold rounded-full px-6 py-2 transition duration-300 hover:bg-[#FF6F61]">
+                View Itinerary
               </Button>
             </a>
             <a href='/my-trips'>
