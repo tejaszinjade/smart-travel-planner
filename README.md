@@ -61,7 +61,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact 📧
 For any questions or support, reach out via:
-- Email: your.email@example.com
+- Email: tejaszinjade2005@gmail.com
 - GitHub Issues: [Create an Issue](https://github.com/tejaszinjade/smart-travel-planner/issues)
 
 ---
