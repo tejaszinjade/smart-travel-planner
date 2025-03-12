@@ -79,7 +79,7 @@ function Hero() {
       {/* Recent Trips Section */}
       <div className="absolute top-20 right-10 z-10 flex flex-col items-start text-left gap-6 p-6 max-w-md">
         <h2 className="font-bold text-white text-2xl animate__animated animate__fadeInRight">
-          Recently Created Trips
+          🌟 Recently Created Trips 🌍
         </h2>
         <div className="grid gap-4">
           {recentTrips.map((trip) => (
@@ -88,24 +88,25 @@ function Hero() {
               className="bg-white bg-opacity-70 p-4 rounded-lg shadow-lg animate__animated animate__zoomIn"
             >
               <h3 className="font-semibold text-lg text-gray-800 mb-2">
-                {trip.location || 'Unknown Location'}
+                📍 {trip.location || 'Unknown Location'}
               </h3>
               <p className="text-sm text-gray-600">
-                {trip.startDate} to {trip.endDate}
+                📅 {trip.startDate} to {trip.endDate}
               </p>
               <p className="text-sm text-gray-600">
-                <strong>Budget:</strong> {trip.budget || 'N/A'}
+                💰 <strong>Budget:</strong> {trip.budget || 'N/A'}
               </p>
               <Link
                 to={`/view-created-itinerary/${trip.id}`}
                 className="text-blue-500 text-sm underline mt-2 inline-block"
               >
-                View Details
+                🔍 View Details
               </Link>
             </div>
           ))}
         </div>
       </div>
+
     </div>
   );
 }
