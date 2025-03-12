@@ -141,6 +141,8 @@ function CreateTrip() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
+      <br/>
+      <br/>
       
       {/* Form Container */}
       <div className="relative z-10 bg-white bg-opacity-50 p-8 rounded-xl shadow-lg w-full max-w-3xl">
@@ -243,8 +245,12 @@ function CreateTrip() {
               )}
             </Button>
           </div>
+        
         </div>
+        
       </div>
+      <br/>
+      <br/>
     </div>
   );
 }

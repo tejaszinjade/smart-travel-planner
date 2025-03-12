@@ -54,6 +54,8 @@ function AddItinerary() {
 
   return (
     <div className="min-h-screen bg-gray-100 pt-16">
+      <br/>
+      <br/>
       <div className="flex justify-center">
         <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-3xl">
           <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">🗺️ Add a New Itinerary</h2>
@@ -205,9 +207,14 @@ function AddItinerary() {
                 🚀 Submit Itinerary
               </button>
             </div>
+            
           </form>
+          
         </div>
+        
       </div>
+      <br/>
+      <br/>
     </div>
   );
 }

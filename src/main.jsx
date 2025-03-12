@@ -11,6 +11,7 @@ import Viewtrip from './view-trip/[tipId]/index.jsx'
 import MyTrips from './my-trips/index.jsx'
 import AddItinerary from './add-itirnerary/index.jsx'
 import ViewCreatedItinerary from './view-created-itirnerary/index.jsx'
+import Footer from './components/custom/Footer.jsx'
 
 const router = createBrowserRouter(
   [
@@ -52,6 +53,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Header/>
       <Toaster/>
       <RouterProvider router={router} />
+      <Footer/>
     </GoogleOAuthProvider>
   </React.StrictMode>,
 )

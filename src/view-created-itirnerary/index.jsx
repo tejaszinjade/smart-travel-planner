@@ -102,6 +102,8 @@ function ViewCreatedItinerary() {
           ))}
         </div>
       </div>
+      <br/>
+      <br/>
     </div>
   );
 }
