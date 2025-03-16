@@ -14,6 +14,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  // DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
@@ -22,14 +23,14 @@ import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
   const [formData, setFormData] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const navigate=useNavigate();
 
   const handleInputChange = (name, value) => {
     setFormData({
@@ -90,8 +91,9 @@ function CreateTrip() {
       id: docId,
     });
     setLoading(false);
-    navigate("/view-trip/" + docId);
-  };
+    navigate('/view-trip/'+docId)
+
+  }
 
   const GetUserProfile = (tokenInfo) => {
     axios
