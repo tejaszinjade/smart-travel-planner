@@ -115,7 +115,7 @@ function Header() {
         <DialogContent className="text-center">
           <DialogHeader>
             <DialogDescription>
-              <img src="/logo.svg" alt="Logo" className="mx-auto h-16" />
+              <img src="/logo.png" alt="Logo" className="mx-auto h-16" />
               <h2 className="font-bold text-lg mt-5 text-gray-900">Sign In with Google</h2>
               <p className="text-sm text-gray-500">Secure Google authentication</p>
               <Button
